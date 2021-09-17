@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} upload {% endblock %}
+{% block content %}
+<h1>Results</h1>
+<h2>{{ result }}</h2>
+{% if flag==1 %}
+<a href="{{url_for('download_file')}}"><button type="button" class="btn btn-primary">Download result file</button></a>
+{% endif %}
+<image  src="{{ url_for('static',filename='images/graph.png')}}">
+    <br>
+    <br>
+<a href="/logout"><button type="button" class="btn btn-primary">Logout</button></a>
+
+{% endblock %}

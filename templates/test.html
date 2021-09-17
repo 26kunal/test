@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %} upload {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <h1>Upload a File </h1>
+            <h3>The File Must Be In  txt format.</h3>
+            <hr>
+
+            <form action="/test" method="POST" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label>Select File</label>
+                    <div class="custom-file">
+                        <input oninput= "filesize(this);" type="file" class="custom-file-input" name="file" id="file">
+                        <label class="custom-file-label" for="file">Select File...</label>
+                    </div>
+                </div>
+                <!-- <button><a href="#">Button Text</a></button> -->
+               
+                <button type="submit" class="btn btn-primary">UPLOAD  FILE & SEE RESULT</button>
+                
+               
+                
+               
+                
+            </form>
+            <br>
+            <br>
+            <a href="/logout"><button type="button" class="btn btn-primary">Logout</button></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    
+  function filesize(elem)
+  {
+     
+      document.cookie=`filesize=${elem.files[0].size}`
+
+
+  }  
+</script>
+
+{% endblock %}

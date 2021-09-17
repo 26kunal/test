@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %} Register Page {% endblock %}
+
+{% block content %}
+	
+<form action="/register" method="post">
+	<p>Name: </p>
+	<p><input type="text" name="nm" /></p>
+	<p>passwrd: </p>
+	<p><input type="password" name="pswd" placeholder="enter pswd"></p>
+	<p>Email: </p>
+	<input type="email" name="email" placeholder="Enter Email" />
+	<p><input type="submit" value="Submit" /></p>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p>{{msg}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	
+</form>
+{% endblock %}

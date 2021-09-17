@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} upload {% endblock %}
+{% block content %}
+<h1>Welcome to sentiment & emotions analysis</h1>
+<br>
+<form action="/test" method="POST" enctype="multipart/form-data">
+   
+    <button type="submit" class="btn btn-primary">Only Test</button>
+    
+    
+</form>
+<br>
+<br>
+
+<form action="/train" method="POST" enctype="multipart/form-data">
+    
+    <button type="submit" class="btn btn-primary">Train & Test</button>
+</form>
+<br>
+<br>
+<a href="/logout"><button type="button" class="btn btn-primary">Logout</button></a>
+{% endblock %}

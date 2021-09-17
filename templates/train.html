@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %} upload {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <h1>Upload Train & test File together </h1>
+            <h3>Both the File Must Be In  csv format, Train file must have two columns</h3>
+            <h4>For example</h4>
+            <h4>'I love this sandwich.', 'pos'</h4>
+            <h3>and Test File Must have only 1 column</h3>
+            <h4>For example</h4>
+            <h4>'I love this sandwich.'</h4>
+
+            <hr>
+
+            <form action="/train" method="POST" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label>Select File</label>
+                    <div class="custom-file">
+                        <input oninput= "filesize(this);" type="file" class="custom-file-input" name="file" id="file"  multiple>
+                        <label class="custom-file-label" for="file">Select File...</label>
+                    </div>
+                </div>
+                <!-- <button><a href="#">Button Text</a></button> -->
+               
+                <button type="submit" class="btn btn-primary" name="name" value="train">UPLOAD  FILE</button>
+               
+            </form>
+           
+            <br>
+            <br>
+            <a href="/logout"><button type="button" class="btn btn-primary">Logout</button></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    
+  function filesize(elem)
+  {
+     
+      document.cookie=`filesize=${elem.files[0].size}`
+
+
+  }  
+</script>
+
+{% endblock %}
